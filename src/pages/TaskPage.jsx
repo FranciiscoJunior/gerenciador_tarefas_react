@@ -1,6 +1,6 @@
 import { ChevronRightIcon } from "lucide-react";
 import { useSearchParams, useNavigate } from "react-router-dom";
-import Title from "./components/Title";
+import Title from "../components/Title";
 
 function TaskPage() {
     const navigate = useNavigate();

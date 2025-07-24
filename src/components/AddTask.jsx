@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Input from "./input";
+import Input from "./Input";
 
 function AddTask( { onAddTaskSubmit }) {
     const [title, setTitle] = useState("");
@@ -27,6 +27,7 @@ function AddTask( { onAddTaskSubmit }) {
                     // Verifica se o titulo e a descrição foram preenchidos
                     if (!title.trim() || !description.trim()) {
                         alert("Preencha o título e a descrição da tarefa");
+                        return;
                     }
 
                     onAddTaskSubmit(title, description);

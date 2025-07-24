@@ -1,24 +1,29 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import App from "./App.jsx";
+import App from "./App";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import TaskPage from "./pages/TaskPage.jsx";
 
-const router  = createBrowserRouter([
-  {
-    path: "/",
-    element: <App/>,
-  },
+  const router  = createBrowserRouter([
+    {
+      path: "/",
+      element: <App/>,
+    },
 
-  {
-    path: "/task",
-    element: <TaskPage/>,
-  },
+    {
+      path: "/task",
+      element: <TaskPage/>,
+    },
 ]);
 
-createRoot(document.getElementById("root")).render(
+const rootElement = document.getElementById("root");
+if (!rootElement) {
+  throw new Error('Elemento com id "root" não encontrado no HTML.');
+}
+
+createRoot(rootElement).render(
   <StrictMode>
     <RouterProvider router={router} />
-  </StrictMode>,
+  </StrictMode>
 );

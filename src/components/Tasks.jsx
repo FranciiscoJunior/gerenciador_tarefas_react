@@ -1,9 +1,10 @@
 import { CheckIcon, ChevronRightIcon, TrashIcon } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Button from "./Button";
+import PropTypes from "prop-types";
 
 function Tasks ({tasks, onTaskClick, onDeleteTaskClick}) {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     function onSeeDetailsClick(task) {
         const query = new URLSearchParams();
@@ -38,5 +39,11 @@ function Tasks ({tasks, onTaskClick, onDeleteTaskClick}) {
         </ul>
     );
 }
+
+Tasks.propTypes = {
+    tasks: PropTypes.array.isRequired,
+    onTaskClick: PropTypes.func.isRequired,
+    onDeleteTaskClick: PropTypes.func.isRequired,
+};
 
 export default Tasks;
