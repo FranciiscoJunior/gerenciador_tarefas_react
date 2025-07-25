@@ -19,7 +19,7 @@ function Tasks ({tasks, onTaskClick, onDeleteTaskClick}) {
                 <li key={task.id} className="flex gap-2">
                     
                     <button onClick={() => onTaskClick(task.id)}
-                        className={`bg-slate-400 flex items-center gap-2 text-left w-full text-white p-2 rounded-md
+                        className={`bg-slate-700 flex items-center gap-2 text-left w-full text-white p-2 rounded-md
                             ${task.isCompleted && "line-through"
                         }`}>
 
@@ -30,8 +30,8 @@ function Tasks ({tasks, onTaskClick, onDeleteTaskClick}) {
                     <Button onClick={ () => onSeeDetailsClick(task)}>
                         <ChevronRightIcon/>
                     </Button>
-
-                    <Button onClick={() => onDeleteTaskClick(task)}>
+                    
+                    <Button onClick={() => onDeleteTaskClick(task.id)}>
                         <TrashIcon/>
                     </Button>
                 </li>
